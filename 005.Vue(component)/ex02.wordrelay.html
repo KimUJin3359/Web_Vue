@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h4> 끝말 잇기[Click] </h4>
+            {{ input }}
+            <br>
+            <input type="text" v-model="output" ref="answer">
+            <button @click="onClickButton"> 입력 </button>
+            <br>
+            {{ result }}
+
+            <br>
+            <br>
+            <br>
+
+            <h4> 끝말 잇기[Form] </h4>
+            {{ input2 }}
+            <br>
+            <form @submit= "onSubmitForm">
+                <input type="text" v-model="output2">
+                <button type="submit"> 입력 </button>
+            </form>
+            {{ result2 }}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                input: "유상무",
+                input2: "유상무",
+                output: "",
+                output2: "",
+                result: "입력해주세요",
+                result2: "입력해주세요",
+            },
+            methods: {
+                onClickButton() {
+                    if (this.input[this.input.length - 1] === this.output[0]) {
+                        this.result = "정답입니다";
+                        this.input = this.output;
+                        this.output = "";
+                    }
+                    else {
+                        this.result = "오답입니다";
+                        this.output = "";
+                    }
+                    // vue에서도 예외적으로 DOM을 직접 제어해야할 경우가 생김
+                    // 그 때, ref라는 속성을 활용
+                    // 자주 쓰지 않는 것이 좋음
+                    this.$refs.answer.focus();
+                },
+                onSubmitForm(e) {
+                    e.preventDefault();
+                    if (this.input2[this.input2.length - 1] === this.output2[0]) {
+                        this.result2 = "정답입니다";
+                        this.input2 = this.output2;
+                        this.output2 = "";
+                    }
+                    else {
+                        this.result2 = "오답입니다";
+                        this.output2 = "";
+                    }
+                },
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

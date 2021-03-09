@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+    <script>
+        // MVC패턴, MVP패턴, MVVM패턴(데이터가 바뀔 때 View도 같이 바뀜) 알아보기
+        // VMP, MVVM은 MVC의 단점을 보완한 패턴
+        const h1 = document.createElement("h1");
+        document.body.append(h1);
+        
+        let viewModel = {};
+        let model = "";
+        Object.defineProperty(viewModel, 'model', {
+            get() { 
+                return model;
+            },
+            set(value) {
+                model = value;
+                h1.innerHTML = model;
+            },
+        });
+        viewModel.model = "a";
+    </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{ first }} 곱하기 {{ second }}는?
+        </div>
+        <form @submit.prevent="onSubmitForm">
+            <input type="text" v-model="value" ref="answer">
+            <button type="submit"> 입력 </button>
+        </form>
+        <div>
+            {{ result }}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                first: Math.ceil(Math.random() * 9), 
+                second: Math.ceil(Math.random() * 9), 
+                value: "", 
+                result: ""
+                };
+            },
+            methods: {
+                onSubmitForm() {
+                    //const {first, second} = this;
+                    // 비구조 할당을 통해서 가져올 때는 값을 가져올때만 사용하고
+                    // 값을 변경할 때는 사용하지 않는다.
+                    if (this.first * this.second === Number(this.value)){
+                        this.result = "정답";
+                        this.first = Math.ceil(Math.random() * 9);
+                        this.second = Math.ceil(Math.random() * 9);
+
+                    }
+                    else {
+                        this.result = "오답";
+                    }
+                    this.value = "";
+                    this.$refs.answer.focus();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="zero">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+        </div>
+        <div v-else-if="one">
+            <div>e</div>
+            <div>f</div>
+        </div>
+        <div v-else>
+            <div>g</div>
+            <div>h</div>
+        </div>
+        <button v-on:click="plus">버튼</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                cnt: 0,
+                zero: true,
+                one: true,
+                two: true
+            },
+            methods: {
+                plus() {
+                    this.cnt += 1;
+                    if (this.cnt === 3) {
+                        this.cnt = 0;
+                    }
+                    if (this.cnt === 0) {
+                        this.zero = true;
+                    }
+                    else if (this.cnt === 1) {
+                        this.zero = false;
+                        this.one = true;
+                    }
+                    else {
+                        this.zero = false;
+                        this.one = false;
+                        this.two = true;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

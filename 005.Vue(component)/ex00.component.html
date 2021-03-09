@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind:key는 중복되지 않는 값으로 -->
+        <grocery-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"> </grocery-item>
+        <!-- <grocery-item v-for="item in groceryList" :todo="item" :key="item.id"> </grocery-item> -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        Vue.component('grocery-item', { 
+            //props 데이터를 넘겨받는 부분
+            props: ['todo'],
+            template: '<li> {{todo.text}} </li>'
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                groceryList: [
+                    {id: 0, text: "양파"},
+                    {id: 1, text: "치즈"},
+                    {id: 2, text: "소세지"}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

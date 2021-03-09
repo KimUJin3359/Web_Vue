@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>변수의 연산</h2>
+        <div>
+            <span>a = </span>
+            <input type="text" v-model="a">
+        </div>
+
+        <div>
+            <span>b = </span>
+            <input type="text" v-model="b">
+        </div>
+
+        <br/>
+        <button v-on:click="onClickPlus">덧셈</button>
+        <button v-on:click="onClickMinus">뺄셈</button>
+        <button @click="onClickMultiple">곱셈</button>
+        <button @click="onClickDivide">나눗셈</button>
+        <button @click="onClickOther">나머지</button>
+        <div> {{result}} </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                a: "", 
+                b: "",
+                result: "0"
+            },
+            methods: {
+                onClickPlus() {
+                    this.result = Number(this.a) + Number(this.b);
+                },
+                onClickMinus() {
+                    this.result = Number(this.a) - Number(this.b);
+                },
+                onClickMultiple() {
+                    this.result = Number(this.a) * Number(this.b);
+                },
+                onClickDivide() {
+                    this.result = Number(this.a) / Number(this.b);
+                },
+                onClickOther() {
+                    this.result = Number(this.a) % Number(this.b);
+                },
+            }
+        })
+    </script>
+</body>
+</html>
