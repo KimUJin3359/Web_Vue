@@ -61,11 +61,11 @@
 - **Browser가 HTML을 출력하는 원리**
   1) HTML을 Parsing하여 DOM Tree 생성
   2) Render Tree 생성
-    - 각 DOM Tree의 Node에 Style 정보를 입힘
+     - 각 DOM Tree의 Node에 Style 정보를 입힘
   3) Layout 과정
-    - 각 Render Tree Node들의 출력 할 좌표가 계산되어 정해짐
+     - 각 Render Tree Node들의 출력 할 좌표가 계산되어 정해짐
   4) Painting
-    - 이미지, color를 입혀 출력을 준비하는 과정
+     - 이미지, color를 입혀 출력을 준비하는 과정
 - Virtual DOM의 필요성
   - 일반적인 DOM 변경 발생 시, **Render Tree부터 재시작**이 이루어짐
     - DOM을 제어할 때마다 Client Browser의 속도 저하가 발생
