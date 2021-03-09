@@ -144,11 +144,13 @@
 - destroyed
   - 해체가 끝난 이후
   - 인스턴스 속성에 접근 불가
-  
+    
   >> [Lifecycle에 따른 동작 방식 파악](https://github.com/KimUJin3359/Web_Vue/blob/master/004.Vue(life-cycle)/ex00.html)
   
+### Vue.js를 활용한 실습    
   >> [Vue의 간단한 component 실습](https://github.com/KimUJin3359/Web_Vue/blob/master/005.Vue(component)/ex00.component.html)
-    - v-bind:key 및 v-bind:prop을 통해 component를 불러옴
+
+  - v-bind:key 및 v-bind:prop을 통해 component를 불러옴
 
   >> [Vue를 활용한 간단한 계산기 생성](https://github.com/KimUJin3359/Web_Vue/blob/master/005.Vue(component)/ex01.calculator.html)
   
