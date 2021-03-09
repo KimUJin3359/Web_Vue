@@ -13,7 +13,7 @@
 #### Vue.js란?    
 - **Progressive** JavaScript Framework
   - JavaScript 프로젝트에서, 점진적으로 수정해 나가면서 Vue.js를 적용
-  - 즉 수정하는 방식으로 적용하는 프레임워크
+  - 즉 **수정하는 방식으로 적용**하는 프레임워크
 - {{ 변수명 }}
   - vue Instance를 하나 만들어야 함
   - el : DOM element(선택자를 써줌)
@@ -38,19 +38,19 @@
 
 #### 단방향 Data Binding
 - Data Binding
-  - Vue Instance의 값을 수정하면 즉시 반영
+  - **Vue Instance의 값을 수정**하면 즉시 반영
   - 단방향 Binding이라 함
-  - v-bind: 단방향 Binding, Tag 속성에 값을 넣을 수 있음
+  - **v-bind:** 단방향 Binding, Tag 속성에 값을 넣을 수 있음
   
   >> [v-bind를 활용한 변수값 변경](https://github.com/KimUJin3359/Web_Vue/blob/master/001.Vue/ex02.tag_binding.html)
   
   >> [v-bind를 통한 class변경으로 글자 색깔 바꾸기](https://github.com/KimUJin3359/Web_Vue/blob/master/001.Vue/ex03.change_attribute.html)
   
 #### 양방향 Data Binding
-- HTML Form 또는 Vue 영역 값 동기화
+- HTML Form 또는 Vue 영역 값 **동기화**
   - HTML Form의 값을 바꾸면, Vue 변수에 값이 변경됨
   - Vue 변수에 값을 변경하면, HTML Form의 값이 변경됨
-  - v-model: input의 값을 수정하면, HTML 출력도 변경
+  - **v-model:** input의 값을 수정하면, HTML 출력도 변경
   
   >> [v-model과 v-bind의 Binding 확인](https://github.com/KimUJin3359/Web_Vue/blob/master/001.Vue/ex04.v_model.html)
   
@@ -58,7 +58,7 @@
   
 ### Vue.js의 기본 원리
 #### Virtual DOM
-- Browser가 HTML을 출력하는 원리
+- **Browser가 HTML을 출력하는 원리**
   1) HTML을 Parsing하여 DOM Tree 생성
   2) Render Tree 생성
     - 각 DOM Tree의 Node에 Style 정보를 입힘
@@ -67,9 +67,9 @@
   4) Painting
     - 이미지, color를 입혀 출력을 준비하는 과정
 - Virtual DOM의 필요성
-  - 일반적인 DOM 변경 발생 시, Render Tree부터 재시작이 이루어짐
+  - 일반적인 DOM 변경 발생 시, **Render Tree부터 재시작**이 이루어짐
     - DOM을 제어할 때마다 Client Browser의 속도 저하가 발생
-- Virtual DOM 동작 방식
+- **Virtual DOM 동작 방식**
   1) 실제의 DOM Tree를 기반으로 Virtual DOM Tree 생성
   2) DOM 제어를 Virtual DOM Tree에 모두 적용
   3) 모든 DOM 제어가 끝났을 때, Virtual DOM Tree를 실제의 DOM Tree에 적용
@@ -100,16 +100,16 @@
   
 ### MVVM 패턴
 - 디자인 패턴
-  - 프로그래밍 개발 시 자주 나타나는 문제를 해결하기 위한 방법, 규약을 묶어 이름을 붙인 것
+  - 프로그래밍 개발 시 **자주 나타나는 문제를 해결**하기 위한 방법, 규약을 묶어 이름을 붙인 것
   - 디자인 패턴 이용시 협업이 수월하며, 유지보수가 좋음
 - MVVM 패턴  
   - Vue.js로 웹 개발하는 방식은 MVVM 패턴
   - 세 가지 역할이 존재
-    - Model : 실제 데이터를 처리하는 소스코드
-    - View : UI에 해당하는 소스코드
-    - ViewModel : View를 표현하기 위해 만들어진 코드
+    - **Model** : 실제 데이터를 처리하는 소스코드
+    - **View** : UI에 해당하는 소스코드
+    - **ViewModel** : View를 표현하기 위해 만들어진 코드
 - Vue.js의 역할
-  - ViewModel 부분을 Vue.js가 담당
+  - **ViewModel 부분**을 Vue.js가 담당
   - 동작 과정
     1) 사용자는 View를 통해 입력
     2) View에서 이벤트 발생 시, View Model의 콜백 함수를 호출
